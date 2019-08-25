@@ -3,20 +3,23 @@ $(document).ready(function() {
       type: "GET",
       url: "https://api.myjson.com/bins/k91pn", // Using our resources.json file to serve results
       success: function(result) {
-        console.log(result);
-        console.log($("#at").text())
+        //console.log(result);
+        //console.log($("#at").text())
+        var total = result[0]['emoji_stats']['number']+result[1]['emoji_stats']['number']
         $.each(result,function(index, value){
         	if (value['name']=="Akhil"){
         		$("#at").text(value['emoji_stats']['number'])
+        		$('#ap').text("("+(value['emoji_stats']['number']/total*100).toFixed(0)+"%)")
         		$("#are").text(value['emoji_stats']['recent-3'].join(' '))
         		$.each(value['emoji_stats']['top-3'],function(index,value){
-        			console.log("#a-"+(index+1))
+        			//console.log("#a-"+(index+1))
         			$("#a-"+(index+1)).text(value[0])
         			$("#an-"+(index+1)).text(value[1])
         		})
         	}
         	else{
         		$("#st").text(value['emoji_stats']['number'])
+        		$('#sp').text("("+(value['emoji_stats']['number']/total*100).toFixed(0)+"%)")
         		$("#sre").text(value['emoji_stats']['recent-3'].join(' '))
         		$.each(value['emoji_stats']['top-3'],function(index,value){
         			$("#s-"+(index+1)).text(value[0])

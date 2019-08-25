@@ -5,6 +5,10 @@
   display:block;
 }
 
+.percentage{
+  font-size: 25px
+}
+
 .table_block{
    table-layout: auto;
   font-size: 30px;
