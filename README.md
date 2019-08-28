@@ -1,2 +1,2 @@
 # enforcer007.github.io
-Emoji Stats
+Emoji Stats for us
